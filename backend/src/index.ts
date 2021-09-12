@@ -8,7 +8,7 @@ import session from 'express-session';
 import bcrypt from 'bcryptjs';
 import dotenv from 'dotenv';
 import User from './Models/User'
-import { Register } from './Pages/Register';
+import { Register } from './Interfaces/Register';
 
 const LocalStrategy = passportLocal.Strategy
 

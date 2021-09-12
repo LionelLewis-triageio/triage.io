@@ -7,7 +7,7 @@ import cookieParser from 'cookie-parser';
 import session from 'express-session';
 import bcrypt from 'bcryptjs';
 import dotenv from 'dotenv';
-import User from './models/User'
+import User from './Models/User'
 
 mongoose.connect("mongodb+srv://lionellewis:z3n_C0n50rt1um@triage-io.vwadk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     (err: Error) => {
@@ -31,7 +31,7 @@ app.use(
     session({
         secret: "secretcode",
         resave: true,
-        saveUninitialized: true,
+        saveUninitialized: true
     })
 );
 
@@ -42,14 +42,27 @@ app.use(passport.session());
 
 /**** Routes ****/
 app.post('/register', async (req: Request, res: Response) => {
-    // username, password
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    const newUser = new User({
-        username: req.body.username,
-        password: hashedPassword
-    });
-    await newUser.save();
-    res.send('Success')
+
+    const { username, password } = req.body;
+
+    if(!username || !password || typeof username !== "string" || typeof password !== "string") {
+        res.send("Improper Values");
+        return;
+    }
+
+    User.findOne({ username }, async (err : Error, doc) => {
+        if (err) throw err;
+        if (doc) res.send('User already exists');
+        if (!doc) {
+            const hashedPassword = await bcrypt.hash(password, 10);
+            const newUser = new User({
+              username,
+              password: hashedPassword,
+            });
+            await newUser.save();
+            res.send("Success");
+        };
+    });  
 });
 
 app.listen(4000, () => {

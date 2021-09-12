@@ -99,6 +99,10 @@ app.post('/register', async (req: Request, res: Response) => {
     });  
 });
 
+app.post('/login', passport.authenticate("local", (req, res) => {
+    res.send("Successfully Authenticated")
+}))
+
 app.listen(4000, () => {
     console.log("🚀 Server Started");
 })

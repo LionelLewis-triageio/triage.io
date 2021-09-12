@@ -1,13 +1,13 @@
-import mongoose                       from 'mongoose';
+import mongoose from 'mongoose';
 import express, { Request, Response } from 'express';
-import cors                           from 'cors';
-import passport                       from 'passport';
-import passportLocal                  from 'passport-local';
-import cookieParser                   from 'cookie-parser';
-import session                        from 'express-session';
-import bcrypt                         from 'bcryptjs';
-import dotenv                         from 'dotenv';
-import User                           from './models/User'
+import cors from 'cors';
+import passport from 'passport';
+import passportLocal from 'passport-local';
+import cookieParser from 'cookie-parser';
+import session from 'express-session';
+import bcrypt from 'bcryptjs';
+import dotenv from 'dotenv';
+import User from './models/User'
 
 mongoose.connect("mongodb+srv://lionellewis:z3n_C0n50rt1um@triage-io.vwadk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     (err: Error) => {
@@ -51,3 +51,7 @@ app.post('/register', async (req: Request, res: Response) => {
     await newUser.save();
     res.send('Success')
 });
+
+app.listen(4000, () => {
+    console.log("🚀 Server Started");
+})

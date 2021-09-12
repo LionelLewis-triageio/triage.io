@@ -1,0 +1,47 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\lione\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add bcryptjs cookie-parser cors dotenv express express-session mongoose passport passort-local
+
+PATH: 
+  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Program Files\PuTTY\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\php;C:\Users\lione\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\lione\AppData\Local\Programs\Python\Python39\;C:\Users\lione\AppData\Local\Microsoft\WindowsApps;C:\tools\dart-sdk\bin;C:\Users\lione\AppData\Roaming\Pub\Cache\bin;C:\Users\lione\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\lione\AppData\Roaming\npm;C:\Users\lione\AppData\Local\Programs\Hyper\resources\bin;C:\Users\lione\go\bin;C:\Users\lione\AppData\Local\GitHubDesktop\bin
+
+Yarn version: 
+  1.22.11
+
+Node version: 
+  14.17.3
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/passort-local: Not found
+      at Request.params.callback [as _callback] (C:\Users\lione\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66992:18)
+      at Request.self.callback (C:\Users\lione\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140763:22)
+      at Request.emit (events.js:375:28)
+      at Request.<anonymous> (C:\Users\lione\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141735:10)
+      at Request.emit (events.js:375:28)
+      at IncomingMessage.<anonymous> (C:\Users\lione\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141657:12)
+      at Object.onceWrapper (events.js:481:28)
+      at IncomingMessage.emit (events.js:387:35)
+      at endReadableNT (internal/streams/readable.js:1317:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21)
+
+npm manifest: 
+  {
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

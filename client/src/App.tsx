@@ -1,6 +1,10 @@
 import React from "react";
 import NavBar from "./Components/NavBar";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Homepage from './Pages/Homepage'
+import AdminPage from './Pages/AdminPage'
+import Login from './Pages/Login'
+import Profile from './Pages/Profile'
 
 function App() {
   return (
